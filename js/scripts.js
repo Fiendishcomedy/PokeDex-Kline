@@ -20,17 +20,17 @@ var pokemonRepository = (function () {
   }
   function addListItem(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
-      var $row = $(".row");
+      let $row = $(".row");
 
-      var $card = $('<div class="card" style="width:400px"></div>');
-      var $image = $(
+      let $card = $('<div class="card" style="width:400px"></div>');
+      let $image = $(
         '<img class="card-img-top" alt="Card image" style="width:20%" />'
       );
       $image.attr("src", pokemon.imageUrl);
-      var $cardBody = $('<div class="card-body"></div>');
-      var $cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
-      var $seeProfile = $(
-        '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">See Profile</button>'
+      let $cardBody = $('<div class="card-body"></div>');
+      let $cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
+      let $seeProfile = $(
+        '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">'+"See "+pokemon.name+ " Profile"+'</button>'
       );
 
       $row.append($card);
